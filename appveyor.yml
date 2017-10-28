@@ -1,0 +1,12 @@
+version: "{build}"
+max_jobs: 1
+test: off
+clone_folder: c:\projects\$(appveyor_project_name)
+shallow_clone: true
+build_script:
+  - cmd: call appveyor.bat
+artifacts:
+  - path: build
+deploy:
+  - provider: Environment
+    name: GHpr
